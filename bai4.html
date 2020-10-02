@@ -13,17 +13,20 @@
         this.y = y;
         this.radius = radius;
         this.color = color;
+
+
+        this.render = function (){
+            let ctx = document.getElementById('screen');
+            let draw = ctx.getContext('2d');
+            draw.beginPath();
+            draw.arc(this.x,this.y,this.radius,0,2*Math.PI);
+            draw.fill();
+
+        }
     }
 
-    function createcirle() {
-        let ctx = document.getElementById('screen').getContext('2d');
-        let globular = new Cirle(10, 10, 100, '#000000')
-        ctx.beginPath();
-        ctx.arc(globular.x, globular.y, globular.radius, 0, 2 * Math.PI)
-        ctx.fill();
-    }
-
-    createcirle();
+    let createCricle = new Cirle(10,10,100,'#000000');
+    createCricle.render()
 
 
 </script>
